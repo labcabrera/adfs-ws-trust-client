@@ -1,0 +1,25 @@
+group = "org.lab.wstrust"
+version = "1.0.0"
+
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+compileJava {
+	sourceCompatibility = 1.6
+	targetCompatibility = 1.6
+	options.encoding = "UTF-8"
+}
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile "org.apache.httpcomponents:httpclient:4.5.3"
+	compile "commons-codec:commons-codec:1.10"
+	compile "org.slf4j:slf4j-api:1.7.25"
+
+	testCompile "ch.qos.logback:logback-classic:1.2.3"
+	testCompile "junit:junit:4.12"
+}

@@ -1,0 +1,3 @@
+= ADFS JWT basic client
+
+Partial WS-Trust implementation with minimal dependencies (httpclient & commons-codec).
