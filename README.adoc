@@ -1,4 +1,4 @@
-= ADFS JWT basic client
+= ADFS WS-Trust client
 
 image:https://travis-ci.org/labcabrera/adfs-jwt-lite-client.svg?branch=master["Build Status", link="https://travis-ci.org/labcabrera/adfs-jwt-lite-client"]
 
