@@ -23,14 +23,14 @@ public class WSTrustClient {
 
 	private static final Logger log = LoggerFactory.getLogger(WSTrustClient.class);
 
-	public Document jwtTokenRequest(String endpointUri, String clientId, String username, String password) {
+	public Document jwtTokenRequest(String endpointUri, String clientId, String username, String password,
+			CloseableHttpClient client) {
 		try {
 			WSTrustRequestBuilder builder = new WSTrustRequestBuilder();
 			Document doc = builder.build(endpointUri, clientId, username, password);
 			String plain = transformDocument(doc);
 			log.debug("Token request: {}", plain);
 			HttpEntity entity = new ByteArrayEntity(plain.getBytes(Constants.ENCODING));
-			CloseableHttpClient client = HttpClients.createDefault();
 			HttpPost httpPost = new HttpPost(endpointUri);
 			httpPost.setEntity(entity);
 			httpPost.addHeader("Content-Type", Constants.CONTENT_TYPE);
@@ -47,6 +47,11 @@ public class WSTrustClient {
 		} catch (Exception ex) {
 			throw new WSTrustException("JWT token request error", ex);
 		}
+	}
+
+	public Document jwtTokenRequest(String endpointUri, String clientId, String username, String password) {
+		CloseableHttpClient client = HttpClients.createDefault();
+		return jwtTokenRequest(endpointUri, clientId, username, password, client);
 	}
 
 	public String transformDocument(Document doc) {
