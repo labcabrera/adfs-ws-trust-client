@@ -1,5 +1,5 @@
 = ADFS WS-Trust client
 
-image:https://travis-ci.org/labcabrera/adfs-jwt-lite-client.svg?branch=master["Build Status", link="https://travis-ci.org/labcabrera/adfs-jwt-lite-client"]
+image:https://travis-ci.org/labcabrera/adfs-ws-trust-client.svg?branch=master["Build Status", link="https://travis-ci.org/labcabrera/adfs-ws-trust-client"]
 
 Partial WS-Trust implementation with minimal dependencies (httpclient & commons-codec).
